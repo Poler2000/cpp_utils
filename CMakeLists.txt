@@ -6,4 +6,4 @@ set(CMAKE_CXX_FLAGS "-Werror -Wall -Wextra -Wpedantic")
 
 include_directories(include)
 
-add_executable(cpp_utils main.cpp src/SimpleTimer.cpp include/SimpleTimer.h)
+add_executable(cpp_utils main.cpp src/SimpleTimer.cpp include/SimpleTimer.h src/BenchmarkTimer.cpp include/BenchmarkTimer.h include/TimeMeasurement.h)
