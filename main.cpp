@@ -1,10 +1,14 @@
 #include <iostream>
-#include "SimpleTimer.h"
-#include "BenchmarkTimer.h"
 #include <cmath>
 
+#include "SimpleTimer.h"
+#include "BenchmarkTimer.h"
+#include "Random.h"
+
+using namespace poler_utils;
+
 double simpleTimerExample() {
-    poler_utils::SimpleTimer timer;
+    SimpleTimer timer;
     double result = 0;
 
     for (int i = 0; i < 100000; i++) {
@@ -19,7 +23,7 @@ double simpleTimerExample() {
 }
 
 double benchmarkTimerExample() {
-    poler_utils::BenchmarkTimer timer1, timer2, timer3;
+    BenchmarkTimer timer1, timer2, timer3;
     double result = 0;
 
     timer1.start();
@@ -40,8 +44,15 @@ double benchmarkTimerExample() {
     return result;
 }
 
+void randomExample() {
+    std::printf("Random int between 1 and 5 is: %d\n", Random::nextInt(1, 5));
+    std::printf("Random double is: %f\n", Random::nextDouble());
+    std::printf("Random string is: %s\n", Random::generateString(10).c_str());
+}
+
 int main() {
     simpleTimerExample();
     benchmarkTimerExample();
+    randomExample();
     return 0;
 }
