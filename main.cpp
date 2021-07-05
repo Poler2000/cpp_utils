@@ -4,6 +4,7 @@
 #include "SimpleTimer.h"
 #include "BenchmarkTimer.h"
 #include "Random.h"
+#include "Logger.h"
 
 using namespace poler_utils;
 
@@ -50,9 +51,16 @@ void randomExample() {
     std::printf("Random string is: %s\n", Random::generateString(10).c_str());
 }
 
+void loggerExample() {
+    std::string s{"Smith"};
+    Logger::error("Hello, {2} {3}! You have {1}$ "
+                  "in your bank account and {0} new messages!", 4, 7.31, "John", s);
+}
+
 int main() {
     simpleTimerExample();
     benchmarkTimerExample();
     randomExample();
+    loggerExample();
     return 0;
 }
