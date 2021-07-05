@@ -8,7 +8,7 @@ namespace poler_utils {
     }
 
     int Random::nextInt() {
-        return (int)(getInstance().generator_());
+        return nextInt(0, INT32_MAX);
     }
 
     int Random::nextInt(const int max) {
@@ -16,6 +16,11 @@ namespace poler_utils {
     }
 
     int Random::nextInt(const int min, const int max) {
+        if (min > max) {
+            std::uniform_int_distribution<int> dis(max, min);
+            return dis(getInstance().generator_);
+        }
+
         std::uniform_int_distribution<int> dis(min, max);
 
         return dis(getInstance().generator_);
@@ -99,7 +104,7 @@ namespace poler_utils {
         std::vector<int> vec(max - min + 1);
 
         for (size_t i = 0; i <= size_t(max - min); i++) {
-            vec[i] = min + 1;
+            vec[i] = min + i;
         }
         std::shuffle(vec.begin(), vec.end(), getInstance().generator_);
 
