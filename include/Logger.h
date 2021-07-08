@@ -33,6 +33,9 @@ namespace poler_utils {
         Arg(const char* value) : type(CSTRING) { v = value; }
     };
 
+    // Singleton logger class.
+    // Supports logging levels and C#-like text formatting.
+    // Works primarily with int, float, double and strings
     class Logger {
     public:
         Logger(const Logger&) = delete;
