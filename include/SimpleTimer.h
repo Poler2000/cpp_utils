@@ -3,7 +3,7 @@
 
 #include <chrono>
 
-namespace poler_utils {
+namespace poler::utils {
 
     // Provides very basic way of measuring execution time.
     // Timer starts running when it is created and allows user to

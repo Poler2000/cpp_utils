@@ -3,7 +3,7 @@
 
 #include <chrono>
 
-namespace poler_utils {
+namespace poler::utils {
     struct TimeMeasurement {
         explicit TimeMeasurement(std::chrono::high_resolution_clock::duration duration) :
             minutes(std::chrono::duration_cast<std::chrono::minutes>(duration).count()),
@@ -19,5 +19,6 @@ namespace poler_utils {
         long nanoseconds;
     };
 }
+
 
 #endif //CPP_UTILS_TIMEMEASUREMENT_H

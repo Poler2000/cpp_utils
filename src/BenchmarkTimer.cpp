@@ -1,7 +1,6 @@
 #include "BenchmarkTimer.h"
 
-namespace poler_utils {
-
+namespace poler::utils {
     bool BenchmarkTimer::start() {
         mtx_.lock();
         if (started_) {

@@ -1,6 +1,6 @@
 #include "Logger.h"
 
-namespace poler_utils {
+namespace poler::utils {
     Logger::Logger(LogLevel level) {
         level_ = level;
     }

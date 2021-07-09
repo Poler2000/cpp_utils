@@ -5,7 +5,7 @@
 #include <vector>
 #include <random>
 
-namespace poler_utils {
+namespace poler::utils {
     class Random {
     public:
         Random(const Random&) = delete;

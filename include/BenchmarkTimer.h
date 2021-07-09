@@ -6,7 +6,7 @@
 
 #include "TimeMeasurement.h"
 
-namespace poler_utils {
+namespace poler::utils {
 
     // Provides way of measuring execution time of part of your program.
     // Keeps track of measurements performed.

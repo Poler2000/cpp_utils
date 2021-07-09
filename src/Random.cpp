@@ -1,7 +1,7 @@
 #include <algorithm>
 #include "Random.h"
 
-namespace poler_utils {
+namespace poler::utils {
     Random& Random::getInstance() {
         static Random instance;
         return instance;

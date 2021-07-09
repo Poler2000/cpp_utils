@@ -2,16 +2,10 @@
 #define CPP_UTILS_LOGGER_H
 
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <tuple>
-#include <cstdlib>
-#include <cstdio>
-#include <cstdarg>
 #include <variant>
 #include <mutex>
 
-namespace poler_utils {
+namespace poler::utils {
     enum LogLevel {
         NONE,
         ERROR,

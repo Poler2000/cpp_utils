@@ -31,7 +31,7 @@ target_link_libraries($your-target CppUtils)
 ```cpp
 #include "Random.h"
 
-using namespace poler_utils;
+using namespace poler::utils;
 
 void randomExample() {
     std::printf("Random int between 1 and 5 is: %d\n", Random::nextInt(1, 5));
@@ -44,7 +44,7 @@ void randomExample() {
 ```cpp
 #include "SimpleTimer.h"
 
-using namespace poler_utils;
+using namespace poler::utils;
 
 double simpleTimerExample() {
     SimpleTimer timer;
@@ -67,7 +67,7 @@ double simpleTimerExample() {
 ```cpp
 #include "BenchmarkTimer.h"
 
-using namespace poler_utils;
+using namespace poler::utils;
 
 double benchmarkTimerExample() {
     BenchmarkTimer timer1, timer2, timer3;
@@ -96,7 +96,7 @@ double benchmarkTimerExample() {
 ```cpp
 #include "Logger.h"
 
-using namespace poler_utils;
+using namespace poler::utils;
 
 void loggerExample() {
     std::string s{"Smith"};
