@@ -79,6 +79,7 @@ namespace poler::utils {
             getInstance().mtx_.unlock();
         }
 
+        static void printValue(std::ostream& output, const Arg value);
 
         static void print(const char *msg, std::ostream& output, const Arg *args, size_t numArgs);
 

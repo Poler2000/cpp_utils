@@ -22,31 +22,37 @@ namespace poler::utils {
             else if (*msg == '{') {
                 if (*(msg + 1) == '}') {
                     msg += 2;
+                    printValue(output, args[0]);
                 }
                 else {
                     int i = (int)*(msg + 1) - 48;
-                    switch (args[i].type) {
-                        case Arg::INT:
-                            output << std::get<0>(args[i].v);
-                            break;
-                        case Arg::FLOAT:
-                            output << std::get<1>(args[i].v);
-                            break;
-                        case Arg::DOUBLE:
-                            output << std::get<2>(args[i].v);
-                            break;
-                        case Arg::STRING:
-                            output << std::get<3>(args[i].v);
-                            break;
-                        case Arg::CSTRING:
-                            output << std::get<4>(args[i].v);
-                            break;
-                    }
+                    printValue(output, args[i]);
                     msg += 3;
                 }
+            } else {
+                output << *msg++;
             }
-            output << *msg++;
         }
         output << '\n';
+    }
+
+    void Logger::printValue(std::ostream &output, const Arg value) {
+        switch (value.type) {
+            case Arg::INT:
+                output << std::get<0>(value.v);
+                break;
+            case Arg::FLOAT:
+                output << std::get<1>(value.v);
+                break;
+            case Arg::DOUBLE:
+                output << std::get<2>(value.v);
+                break;
+            case Arg::STRING:
+                output << std::get<3>(value.v);
+                break;
+            case Arg::CSTRING:
+                output << std::get<4>(value.v);
+                break;
+        }
     }
 }
