@@ -17,11 +17,11 @@ namespace poler::utils {
 
     int Random::nextInt(const int min, const int max) {
         if (min > max) {
-            std::uniform_int_distribution<int> dis(max, min);
+            std::uniform_int_distribution<int> dis(max, min - 1);
             return dis(getInstance().generator_);
         }
 
-        std::uniform_int_distribution<int> dis(min, max);
+        std::uniform_int_distribution<int> dis(min, max - 1);
 
         return dis(getInstance().generator_);
     }

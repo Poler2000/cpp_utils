@@ -13,16 +13,27 @@ namespace poler::utils {
 
         static Random& getInstance();
 
+        // returns int greater than or equal to 0 and less than INT32_MAX
         static int nextInt();
+        // returns int greater than or equal to 0 and less than max
+        // or the other way round, if max < 0
         static int nextInt(int max);
+        // returns int greater than or equal to min and less than max
+        // or the other way round, if max < min
         static int nextInt(int min, int max);
 
+        // returns float between 0 and 1 (inclusive)
         static float nextFloat();
+        // returns float between 0 and max (inclusive)
         static float nextFloat(float max);
+        // returns float between min and max (inclusive)
         static float nextFloat(float min, float max);
 
+        // returns double between 0 and 1 (inclusive)
         static double nextDouble();
+        // returns double between 0 and max (inclusive)
         static double nextDouble(double max);
+        // returns double between min and max (inclusive)
         static double nextDouble(double min, double max);
 
         static std::string generateString(size_t length);
