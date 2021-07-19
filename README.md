@@ -34,7 +34,7 @@ target_link_libraries($your-target CppUtils)
 using namespace poler::utils;
 
 void randomExample() {
-    std::printf("Random int between 1 and 5 is: %d\n", Random::nextInt(1, 5));
+    std::printf("Random int between 1 (inclusive) and 5 (exclusive) is: %d\n", Random::nextInt(1, 5));
     std::printf("Random double is: %f\n", Random::nextDouble());
     std::printf("Random string is: %s\n", Random::generateString(10).c_str());
 }
@@ -102,5 +102,10 @@ void loggerExample() {
     std::string s{"Smith"};
     Logger::error("Hello, {2} {3}! You have {1}$ "
                   "in your bank account and {0} new messages!", 4, 7.31, "John", s);
+    Logger::info("That {} is also an option {}", ";)");
+
+    Logger::setImportance(LogLevel::ERROR);
+
+    Logger::info("This msg will not show up");
 }
 ```
