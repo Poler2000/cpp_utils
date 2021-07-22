@@ -4,6 +4,7 @@
 #include <iostream>
 #include <variant>
 #include <mutex>
+#include <fstream>
 
 namespace poler::utils {
     enum LogLevel {
@@ -37,6 +38,26 @@ namespace poler::utils {
 
         static Logger& getInstance();
         static void setImportance(LogLevel level);
+
+        template<typename... Args>
+        static void log(const std::string& path, const bool append, const std::string& msg, const Args&... args) {
+            std::ofstream file;
+            if (append) {
+                file.open(path, std::ios_base::app);
+            }
+            else {
+                file.open(path, std::ios_base::out);
+            }
+            if (file.good()){
+                safeLog(msg, "",  file, args...);
+            }
+            file.close();
+        }
+
+        template<typename... Args>
+        static void log(const std::string& path, const std::string& msg, const Args&... args) {
+            log(path, true, msg, args...);
+        }
 
         template<typename... Args>
         static void error(const std::string& msg, const Args&... args) {
